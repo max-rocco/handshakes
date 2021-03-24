@@ -13,6 +13,6 @@ jobs:
     steps:
       - name: Handshake
         run: |
-          curl --location -g --request GET '{{ secrets.DKPK_API_URL }}/api/facts' --header 'Authorization: Bearer {{ secrets.AUTH_TOKEN }}'
-          curl --location -g --request GET '{{ secrets.DKPK_API_URL }}/api/banner-messages' --header 'Authorization: Bearer {{ secrets.AUTH_TOKEN }}'
-          curl --location -g --request GET '{{ secrets.DKPK_API_URL }}/api/podcasts' --header 'Authorization: Bearer {{ secrets.AUTH_TOKEN }}'
+          curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/facts' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
+          curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/banner-messages' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
+          curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/podcasts' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
