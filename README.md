@@ -1,3 +1,3 @@
 # Handshakes 🤝
 
-Handshaking serverless functions for faster coldboots! 🚀
+Handshaking serverless functions every 10 minutes for faster coldboots! 🚀
