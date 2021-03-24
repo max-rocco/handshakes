@@ -1,6 +1,10 @@
 name: Handshake DKPK API.
 
 on:
+  push:
+    branches: 
+      - main
+
   schedule:
     - cron: '*/10 * * * *'
 
