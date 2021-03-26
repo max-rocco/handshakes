@@ -1,4 +1,4 @@
-name: Handshake DKPK API.
+name: Handshakes
 
 on:
   push:
@@ -6,17 +6,27 @@ on:
       - main
 
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 
   workflow_dispatch:
 
 jobs:
-  handshake:
+  handshakes:
+    name: Handshakes
     runs-on: ubuntu-latest
 
     steps:
-      - name: Handshake
+      - name: Handshake(DKPK)
         run: |
           curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/facts' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
           curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/banner-messages' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
           curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/podcasts' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
+
+      - name: Handshake(Go Fiber)
+        run: |
+          curl --location --request GET '${{ secrets.GO_FIBER_BASE_URL }}'
+          curl --location --request GET '${{ secrets.GO_FIBER_BASE_URL }}/auth/handshake'
+          
+      - name: Handshake(Rustic Medico)
+        run: |
+          curl --location --request GET '${{ secrets.RUSTIC_MEDICO_BASE_URL }}/api/ping'
