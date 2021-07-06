@@ -30,3 +30,9 @@ jobs:
       - name: Handshake(Rustic Medico)
         run: |
           curl --location --request GET '${{ secrets.RUSTIC_MEDICO_BASE_URL }}/api/ping'
+
+      - name: Handshake(SF Next Articles API)
+        run: |
+          curl --location --request GET '${{ secrets.SF_NEXT_ARTICLES_BASE_URL }}/articles-en'
+          curl --location --request GET '${{ secrets.SF_NEXT_ARTICLES_BASE_URL }}/articles-hi'
+          curl --location --request GET '${{ secrets.SF_NEXT_ARTICLES_BASE_URL }}/articles-fr'
