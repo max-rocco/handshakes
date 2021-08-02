@@ -22,17 +22,5 @@ jobs:
           curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/banner-messages' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
           curl --location -g --request GET '${{ secrets.DKPK_API_URL }}/api/podcasts' --header 'Authorization: Bearer ${{ secrets.AUTH_TOKEN }}'
 
-      - name: Handshake(Go Fiber)
-        run: |
-          curl --location --request GET '${{ secrets.GO_FIBER_BASE_URL }}'
-          curl --location --request GET '${{ secrets.GO_FIBER_BASE_URL }}/auth/handshake'
-          
-      - name: Handshake(Rustic Medico)
-        run: |
-          curl --location --request GET '${{ secrets.RUSTIC_MEDICO_BASE_URL }}/api/ping'
-
-      - name: Handshake(SF Next Articles API)
-        run: |
-          curl --location --request GET '${{ secrets.SF_NEXT_ARTICLES_BASE_URL }}/articles-en'
-          curl --location --request GET '${{ secrets.SF_NEXT_ARTICLES_BASE_URL }}/articles-hi'
-          curl --location --request GET '${{ secrets.SF_NEXT_ARTICLES_BASE_URL }}/articles-fr'
+      - name: Handshake(Links)
+        run: curl --location --request GET '${{ secrets.LINKS_API_URL }}/ping'
