@@ -1,4 +1,4 @@
-name: Handshakes 🤝
+name: Handshakes
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
       - main
 
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/5 * * * *'
 
   workflow_dispatch:
 
 jobs:
   handshakes:
     name: Handshakes
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Handshake(DKPK)
